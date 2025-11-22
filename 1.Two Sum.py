@@ -16,20 +16,19 @@ class Solution(object):
         space complexity: O(1)
         """
     
+    # try to use hash map
     def twoSum_optimized(self, nums, target):
         """
         :type nums: List[int]
         :type target: int
         :rtype: List[int]
         """
-        num_dict = {}
+        hash_map = {}
         for i in range(0,len(nums)):
             target_num = target - nums[i]
-            if target_num in num_dict:
-                return [num_dict[target_num], i]
-            num_dict[nums[i]] = i
+            if target_num in hash_map:
+                return [hash_map[target_num],i]
+            else:
+                hash_map[nums[i]] =i
+
         return []
-        """
-        time complexity: O(n)
-        space complexity: O(n)
-        """
