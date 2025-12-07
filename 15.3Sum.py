@@ -5,6 +5,7 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         
+        # use tuple for the set for searching same list faster
         nums.sort()             
         n = len(nums)
         res = set()             
@@ -18,3 +19,5 @@ class Solution(object):
                 seen.add(nums[j])
 
         return [list(t) for t in res]
+    
+    
